@@ -1,0 +1,1605 @@
+
+<!-- saved from url=(0056)http://strut.io/dist/preview_export/impress.html#/step-1 -->
+<html style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Introduction to Node.js</title>
+
+<meta name="description" content="Introduction to Node.js">
+<meta name="author" content="Bhanu Pratap Chaudhary">
+
+<style>
+.componentContainer {
+    position: absolute;
+    line-height: normal;
+    /*-webkit-transform-origin: 135% 135%;
+    -moz-transform-origin: 135% 135%;
+    transform-origin: 135% 135%;*/
+}
+
+.transformContainer {
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<link rel="stylesheet" href="http://strut.io/dist/preview_export/css/themes/default-reset.css">
+<link rel="stylesheet" href="http://strut.io/dist/preview_export/reveal/css/theme/default.css" id="theme">
+<link href="./Deck Title_files/main.css" rel="stylesheet" type="text/css">
+<link href="./Deck Title_files/web-fonts.css" rel="stylesheet" type="text/css">
+<link href="./Deck Title_files/backgroundClasses.css" rel="stylesheet" type="text/css">
+<link href="./Deck Title_files/surfaceClasses.css" rel="stylesheet" type="text/css">
+
+
+<style>
+.reveal.themedArea {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<script async="" src="./Deck Title_files/analytics.js"></script><script type="text/javascript" src="./Deck Title_files/impress.js"></script>
+
+<script src="./Deck Title_files/onready.js"></script>
+<script src="./Deck Title_files/loadPresentation.js"></script>
+<script>
+ready(function() {
+    if (document.getElementById('launched-placeholder'))
+        loadPresentation();
+
+    if (!window.presStarted) {
+        startPres(document, window);
+        impress().init();   
+    }
+
+    if ("ontouchstart" in document.documentElement) { 
+        document.querySelector(".hint").innerHTML = 
+            "<p>Tap on the left or right to navigate</p>";
+    }
+});
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42322531-1', 'strut.io');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body class="impress-supported impress-enabled" style="height: 100%; overflow: hidden;">
+<style type="text/css">
+
+</style>
+<style>
+
+
+
+
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+	
+		
+
+		
+	
+
+</style>
+<!-- This is a work around / hack to get the user's browser to download the fonts 
+ if they decide to save the presentation. -->
+<div style="visibility: hidden; width: 0px; height: 0px">
+<img src="./Deck Title_files/Lato-Bold.woff">
+<img src="./Deck Title_files/HammersmithOne.woff">
+<img src="./Deck Title_files/Droid-Sans-Mono.woff">
+<img src="./Deck Title_files/Gorditas-Regular.woff">
+<img src="./Deck Title_files/FredokaOne-Regular.woff">
+<img src="./Deck Title_files/Ubuntu.woff">
+<img src="./Deck Title_files/Ubuntu-Bold.woff">
+<img src="./Deck Title_files/PressStart2P-Regular.woff">
+<img src="./Deck Title_files/Lato-BoldItalic.woff">
+<img src="./Deck Title_files/AbrilFatface-Regular.woff">
+<img src="./Deck Title_files/Lato-Regular.woff">
+</div>
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div class="bg  strut-surface">
+<div class="bg innerBg strut-slide-0">
+<div id="impress" style="position: absolute; -webkit-transform-origin: 0% 0%; transition: all 1000ms ease-in-out 500ms; -webkit-transition: all 1000ms ease-in-out 500ms; -webkit-transform-style: preserve-3d; top: 50%; left: 50%; -webkit-transform: perspective(3000px) scale(0.3333333333333333);"><div style="position: absolute; -webkit-transform-origin: 0% 0%; transition: all 1000ms ease-in-out 0ms; -webkit-transition: all 1000ms ease-in-out 0ms; -webkit-transform-style: preserve-3d; -webkit-transform: rotateZ(0deg) rotateY(-5.156620156177409deg) rotateX(0deg) translate3d(-600.7466666666667px, -778.24px, 0px);">
+	
+		
+			<div class="step active present" data-state="strut-slide-0" data-x="600.7466666666667" data-y="778.24" data-rotate-y="5.156620156177409" data-scale="3" id="step-1" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(600.7466666666667px, 778.24px, 0px) rotateX(0deg) rotateY(5.156620156177409deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-0" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 54px; left: 25px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 97px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Introduction to Node.js<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 457px; left: 248px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 48px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div style="text-align: center;">Bhanu Pratap Chaudhary</div><div style="text-align: center;">Founder&nbsp;</div><div style="text-align: center;">Jutja.com</div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 674px; left: 79px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 891px; height: 68.22px;">
+<div class="transformContainer" style="-webkit-transform: scale(0.46, 0.46);
+-moz-transform: scale(0.46, 0.46);
+transform: scale(0.46, 0.46)">
+<img src="./Deck Title_files/cYAgXIQ.png">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-1" data-x="382.29333333333335" data-y="3426.9866666666667" data-rotate-y="89.95437383553926" data-scale="3" id="step-2" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(382.29333333333335px, 3426.9866666666667px, 0px) rotateX(0deg) rotateY(89.95437383553926deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-1" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 181px; left: 101px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<font color="#23c728">Node's</font> Goal is to provide<br>easy way to build scalable<br>networking programs<br>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-2" data-x="436.9066666666667" data-y="6430.72" data-rotate-z="89.95437383553926" data-scale="3" id="step-3" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(436.9066666666667px, 6430.72px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(89.95437383553926deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-2" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 344px; left: 78px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<font color="#45e123">Nodejs</font> is <font color="#f32020">NOT</font> another<br>web-framework <br>or a language , or a platform<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 21px; left: 227px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<img src="./Deck Title_files/VQKJrzp.jpg">
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 556px; left: 265px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 638px; left: 177px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div style="text-align: center;">But we can create web-framework based</div><div style="text-align: center;">&nbsp;on node.js using npm.</div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-3" data-x="6963.2" data-y="1092.2666666666667" data-scale="3" id="step-4" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(6963.2px, 1092.2666666666667px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-3" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 42px; left: 326px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<font color="#13db23">Node.js</font><font color="#85fa07"> </font>is&nbsp;
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 140px; left: 499px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 52px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<span style="font-size: 36px;">Web server<br></span><span style="font-size: 36px;">TCP server</span><br style="font-size: 36px;"><span style="font-size: 36px;">Proxy</span><br style="font-size: 36px;"><span style="font-size: 36px;">Awesome Robot Controller</span><br style="font-size: 36px;"><span style="font-size: 36px;">Streaming server</span><br style="font-size: 36px;"><span style="font-size: 36px;">Voice Mail Server</span><br style="font-size: 36px;"><span style="font-size: 36px;">Realtime Server</span><br style="font-size: 36px;"><span style="font-size: 36px;">Anything that deals with high I/0</span>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 185px; left: 17px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 448px; height: 336px;">
+<div class="transformContainer" style="-webkit-transform: scale(0.7, 0.7);
+-moz-transform: scale(0.7, 0.7);
+transform: scale(0.7, 0.7)">
+<img src="./Deck Title_files/wkt4KaO.png">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-4" data-x="7236.266666666666" data-y="3973.12" data-rotate-x="179.90874767107852" data-scale="3" id="step-5" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(7236.266666666666px, 3973.12px, 0px) rotateX(179.90874767107852deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-4" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 256px; left: 341px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div style="text-align: center;"><font color="#45e123">NODE.JS</font>&nbsp;</div><div style="text-align: center;">IS&nbsp;</div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 440px; left: 331px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 144px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+FUN !!
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-5" data-x="10854.4" data-y="7195.306666666666" data-rotate-x="1.1459155902616465" data-rotate-y="1.7188733853924696" data-rotate-z="-1.7188733853924696" data-z="2" id="step-6" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(10854.4px, 7195.306666666666px, 2px) rotateX(1.1459155902616465deg) rotateY(1.7188733853924696deg) rotateZ(-1.7188733853924696deg) scale(1); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-5" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 119px; left: 240px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Why <font color="#45e123">Node.js</font> ?<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 269px; left: 176px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<ul><li><span style="line-height: normal;">Non Blocking asynchronous I/O</span><br></li><li><span style="line-height: normal;">Based on Chrome's V8 Engine (Very fast)</span></li><li><span style="line-height: normal;">Thousands of modules</span></li><li><span style="line-height: normal;">Active Comummity (IRC, Mailing List,&nbsp;</span></li></ul>&nbsp; &nbsp; Twitter, Github , Google's groups )<br><ul><li><span style="line-height: normal;">Runs on Mac, linux and windows</span></li><li><span style="line-height: normal;">Code sharing b/w frontend and backend</span></li></ul>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-6" data-x="10758.826666666666" data-y="3932.16" data-rotate-x="45.26366581533504" data-scale="3" id="step-7" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(10758.826666666666px, 3932.16px, 0px) rotateX(45.26366581533504deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-6" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 56px; left: 68px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div style="text-align: center;">Understanding Server Side&nbsp;</div><div style="text-align: center;">Javascript&nbsp;</div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 256px; left: 341.33px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<img src="./Deck Title_files/L1JUUxh.png">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-7" data-x="10813.44" data-y="1010.3466666666667" data-rotate-y="199.96227050065733" data-scale="3" id="step-8" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(10813.44px, 1010.3466666666667px, 0px) rotateX(0deg) rotateY(199.96227050065733deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-7" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 22px; left: 240px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Why Asynchronous ?
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 176px; left: 55px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div><b>Client-side</b></div><div><br></div><div>One obvious use case:<br></div><div><br></div><div><ul><li><span style="line-height: normal;">Talking to remote instances (Ajax)</span><br></li></ul></div><div><br></div><div>We're doing it asynchronous as we don't want to block interaction with the page</div><div><br></div><div>Programming Ajax doesn't cause much trouble</div><div><br></div><div><b>Server-side</b></div><div><br></div><div>It may not be obvious but server-side we can benefit from asynchronicity in many more cases</div><div><br></div><div>and server-side shows that asynchronous programming can be difficult</div><div><br></div><div>So we should be asking ...</div><div><br></div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-8" data-x="18063.36" data-y="846.5066666666667" data-scale="3" id="step-9" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(18063.36px, 846.5066666666667px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-8" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 23px; left: 19px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div style="text-align: center;">Why Asynchronous JavaScript</div><div style="text-align: center;">&nbsp;on server&nbsp;</div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 255px; left: 183px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div><br></div><div><br></div><div>It's about querying external resources</div><div><br></div><div>Many web applications have code like this:</div><div><br></div><div><font color="#23c728">v<i>ar result = db.query("select * from T");</i></font></div><div><font color="#23c728"><i>// use result</i></font></div><div><br></div><div>What is the software doing while it queries the database ?</div><div><br></div><div>In many cases, just waiting for the response</div><div><br></div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-9" data-x="18145.28" data-y="3659.0933333333332" data-scale="3" id="step-10" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(18145.28px, 3659.0933333333332px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-9" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 172px; left: 93px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 31px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>Code like this:<br></div><div><br></div><div><font color="#23c728">var result = db.query("select * from T");</font></div><div><font color="#23c728">// use result</font></div><div><br></div><div>blocks entire process</div><div><br></div><div>But code like this:</div><div><br></div><div><font color="#23c728">db.query("select..", function (result) {</font></div><div><font color="#23c728">&nbsp; // use result</font></div><div><font color="#23c728">});</font></div><div><br></div><div>Allows the program to return to the event loop immediately.</div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 34px; left: 60px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Better software can multitask
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-10" data-x="18036.053333333333" data-y="6376.106666666667" data-rotate-x="60.16056848873644" data-scale="3" id="step-11" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(18036.053333333333px, 6376.106666666667px, 0px) rotateX(60.16056848873644deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-10" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 83px; left: 127px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Understanding Closures
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 242px; left: 150px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Whenever we see a fucntion inside another function, &nbsp;the inner function<br>has access to the variables in the outer function .<br>Simply Accessing variables outside of your lexical scope creates a closure .<br><br>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-11" data-x="22132.053333333333" data-y="6253.2266666666665" data-rotate-y="269.86312150661774" data-scale="3" id="step-12" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(22132.053333333333px, 6253.2266666666665px, 0px) rotateX(0deg) rotateY(269.86312150661774deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-11" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 35px; left: 137px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Understanding Callbacks<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 158px; left: 202px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 693px; height: 519.75px;">
+<div class="transformContainer" style="-webkit-transform: scale(0.54, 0.54);
+-moz-transform: scale(0.54, 0.54);
+transform: scale(0.54, 0.54)">
+<img src="./Deck Title_files/P3SIxZX.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-12" data-x="25804.8" data-y="6007.466666666666" data-rotate-z="89.95437383553926" data-scale="3" id="step-13" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(25804.8px, 6007.466666666666px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(89.95437383553926deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-12" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 32px; left: 82px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+The Node Callback Pattern
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 539px; left: 54px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<ul><li><span style="line-height: normal;">Check for error then success .... ALWAYS !</span><br></li><li><span style="line-height: normal;">Because this is the de-facto standard and you will find&nbsp;</span></li></ul>&nbsp; &nbsp;the same&nbsp;pattern working in 99.99999 % of Node libraries .<br><br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 131px; left: 233px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 25px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>Node.js introduced the following convention:</div><div><br></div><div><i><font color="#23c728">readFile(filename, function (err, content) {</font></i></div><div><i><font color="#23c728">&nbsp; if (err) {</font></i></div><div><i><font color="#23c728">&nbsp; &nbsp; // handle error</font></i></div><div><i><font color="#23c728">&nbsp; &nbsp; return;</font></i></div><div><i><font color="#23c728">&nbsp; }</font></i></div><div><i><font color="#23c728">&nbsp; // process file content</font></i></div><div><i><font color="#23c728">});</font></i></div><div>Currently this style has also its recommendation in:</div><div><b><br></b></div><div><b>W3C Web API Design Cookbook</b><br></div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-13" data-x="25791.146666666667" data-y="3208.5333333333333" data-scale="3" id="step-14" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(25791.146666666667px, 3208.5333333333333px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-13" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 21px; left: 207px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Real World Example
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 125px; left: 56px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>Concatenate all js files in given directory to lib.js file</div><div><br></div><div>Thinking synchronous it may look like this:</div><div><br></div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 290px; left: 166px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div><font color="#0a9a40">writeFile(dirname + '/lib.js',</font></div><div><font color="#0a9a40">&nbsp; // Read all filenames</font></div><div><font color="#0a9a40">&nbsp; readdir(dirname) &nbsp; &nbsp; &nbsp;// returns array of filenames</font></div><div><font color="#0a9a40">&nbsp; // Filter *.js filenames</font></div><div><font color="#0a9a40">&nbsp; .filter(function (filename) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; return (filename.slice(-3) === '.js')</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &amp;&amp; (filename !== 'lib.js');</font></div><div><font color="#0a9a40">&nbsp; })</font></div><div><font color="#0a9a40">&nbsp; // Read content of each file</font></div><div><font color="#0a9a40">&nbsp; .map(readFile)</font></div><div><font color="#0a9a40">&nbsp; // Concatenate into one string</font></div><div><font color="#0a9a40">&nbsp; .join("\n")</font></div><div><font color="#0a9a40">);</font></div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-14" data-x="25600" data-y="860.16" data-scale="3" id="step-15" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(25600px, 860.16px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-14" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 19px; left: 11px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 67px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>Let's do it asynchronous in Node.js<br></div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 112px; left: 210px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 16px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>// Read all filenames in given path</div><div><font color="#0a9a40">readdir(dirname, function (err, filenames) {</font></div><div><font color="#0a9a40">&nbsp; var result, waiting;</font></div><div><font color="#0a9a40">&nbsp; if (err) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; </font>// Handle eventual error</div><div><font color="#0a9a40">&nbsp; &nbsp; return;</font></div><div><font color="#0a9a40">&nbsp; }</font></div><div><font color="#0a9a40">&nbsp; </font>// Filter *.js filenames</div><div><font color="#0a9a40">&nbsp; filenames = files.filter(function (filename) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; return (filename.slice(-3) === '.js') &amp;&amp; (filename !== 'lib.js');</font></div><div><font color="#0a9a40">&nbsp; });</font></div><div><font color="#0a9a40">&nbsp; </font>// Read content of each file</div><div><font color="#0a9a40">&nbsp; waiting = 0;</font></div><div><font color="#0a9a40">&nbsp; result = [];</font></div><div><font color="#0a9a40">&nbsp; filenames.forEach(function (filename, index) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; ++waiting;</font></div><div><font color="#0a9a40">&nbsp; &nbsp; readFile(filename, 'utf8', function (err, content) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; if (err) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; </font>// Handle eventual error</div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; return;</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; }</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; result[index] = content;</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; if (!--waiting) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; </font>&nbsp; // Got content of all files, concatenate and write into lib.js</div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; writeFile(dirname + '/lib.js', result.join("\n"), function (err) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (err) {</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </font>// Handle eventual error</div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; &nbsp; });</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; }</font></div><div><font color="#0a9a40">&nbsp; &nbsp; });</font></div><div><font color="#0a9a40">&nbsp; });</font></div><div><font color="#0a9a40">});</font></div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-15" data-x="21927.253333333334" data-y="901.12" data-rotate-y="89.95437383553926" data-scale="3" id="step-16" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(21927.253333333334px, 901.12px, 0px) rotateX(0deg) rotateY(89.95437383553926deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-15" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 21px; left: 57px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Looks Like a CallBack <font color="#f32020">HELL !!</font>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 126px; left: 129px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 747px; height: 497.55px;">
+<div class="transformContainer" style="-webkit-transform: scale(1.35, 1.35);
+-moz-transform: scale(1.35, 1.35);
+transform: scale(1.35, 1.35)">
+<img src="./Deck Title_files/1j6gAIn.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-16" data-x="32098.986666666668" data-y="518.8266666666667" data-rotate-x="45.26366581533504" data-scale="3" id="step-17" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(32098.986666666668px, 518.8266666666667px, 0px) rotateX(45.26366581533504deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-16" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 98px; left: 134px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Avoiding CallBack Hell<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 252px; left: 26px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 56px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<ul><li><span style="line-height: normal;">Kepp your code shallow</span><br></li><li><span style="line-height: normal;">Break up your code into smaller chunks</span></li><li><span style="line-height: normal;">Use a sequential library like <font color="#45e123">asyc,step,Q&nbsp;</font></span></li><li><span style="line-height: normal;">Use Modules .&nbsp;</span></li><li><span style="line-height: normal;">Visit callbackhell.com</span></li></ul>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-17" data-x="65399.46666666667" data-y="8738.133333333333" data-scale="3" id="step-18" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(65399.46666666667px, 8738.133333333333px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-17" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 99px; left: 227px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 617px; height: 512.45px;">
+<div class="transformContainer" style="-webkit-transform: scale(1.71, 1.71);
+-moz-transform: scale(1.71, 1.71);
+transform: scale(1.71, 1.71)">
+<img src="./Deck Title_files/5GRWtoJ.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-18" data-x="32413.013333333332" data-y="2853.5466666666666" data-scale="3" id="step-19" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(32413.013333333332px, 2853.5466666666666px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-18" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 35px; left: 244px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Install Node.js
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 202px; left: 82px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>$ git clone https://github.com/joyent/node.git</div><div>$ cd node</div><div>$ mkdir ~/opt</div><div>$ export PREFIX=~/opt; ./configure</div><div>$ make</div><div>$ make install</div><div>$ echo 'export PATH=~/opt/bin:${PATH}' &gt;&gt; ~/.bashrc</div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-19" data-x="32494.933333333334" data-y="5543.253333333333" data-rotate-z="45.26366581533504" data-scale="3" id="step-20" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(32494.933333333334px, 5543.253333333333px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(45.26366581533504deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-19" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 55px; left: 284px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Using Node
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 241px; left: 76px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 48px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<ul><li><span style="line-height: normal;">Save your file as &nbsp;&lt;filename&gt;.js</span><br></li><li><span style="line-height: normal;">Run you Javascript by command</span><br></li></ul>&nbsp; &nbsp; <font color="#0a9a40">node filename.js</font><br><ul><li><span style="line-height: normal;">Or you can enter REPL</span></li></ul>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-20" data-x="35485.013333333336" data-y="5556.906666666667" data-rotate-z="87.08958485988514" data-scale="3" id="step-21" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(35485.013333333336px, 5556.906666666667px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(87.08958485988514deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-20" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 115px; left: 44px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+The Node Package Manager<br>aka&nbsp;<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 210px; left: 185px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 250px; height: 97.22px;">
+<div class="transformContainer" style="-webkit-transform: scale(0.69, 0.69);
+-moz-transform: scale(0.69, 0.69);
+transform: scale(0.69, 0.69)">
+<img src="./Deck Title_files/fT9NMX0.jpg">
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 431px; left: 66px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Its Nodejs answer to the all the package managers our there .<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 621px; left: 210px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div style="text-align: center;">Command Line solution&nbsp;</div><div style="text-align: center;">Based on CommonJS Module System</div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-21" data-x="38379.52" data-y="5297.493333333333" data-rotate-y="67.03606203030631" data-scale="3" id="step-22" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(38379.52px, 5297.493333333333px, 0px) rotateX(0deg) rotateY(67.03606203030631deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-21" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 43px; left: 220px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+What is a Module&nbsp;
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 174px; left: 12px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+It is packaged Javascript Library
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 293px; left: 43px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 48px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Benefits of &nbsp;Using Commonjs Module Pattern
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 390px; left: 15px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<ul><li><span style="line-height: normal;">Ideally It provides portability amongst compliant frameworks&nbsp;</span></li></ul>&nbsp; &nbsp; &nbsp; &nbsp;like &nbsp;narwhal and sometime even in browsers .<br><ul><li><span style="line-height: normal;">In practise , codes are not very portable as they depend on&nbsp;</span></li></ul>&nbsp; &nbsp; &nbsp; &nbsp; api&nbsp;tailored for node.js .&nbsp;<br><ul><li><span style="line-height: normal;">&nbsp;But it becomes very easy to manage the the modules using npm</span></li></ul>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-22" data-x="38406.82666666667" data-y="2580.48" data-rotate-x="89.95437383553926" data-scale="3" id="step-23" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(38406.82666666667px, 2580.48px, 0px) rotateX(89.95437383553926deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-22" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 19px; left: 323px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Using NPM
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 463px; left: 86px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<b>Getting help </b>- <font color="#0a9a40">npm help&nbsp;</font><br><font color="#45e123">&nbsp;</font>// It return a documentation about all commands<br>To get documentation of a particular command using <br><font color="#45e123">&nbsp; </font><font color="#0a9a40">&nbsp; npm &nbsp;&lt;command&gt; --help&nbsp;</font><br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 122px; left: 93px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<b>Installing stuff</b> : <font color="#0a9a40">npm install &lt;module_name&gt;</font><br>Example:<font color="#0a9a40"> npm install angular -g &nbsp;</font><br>&nbsp;will install Node.JS + Angular.JS project Generator<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 265px; left: 67px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<h2 style="margin-top: 0px; margin-bottom: 0px; padding: 10px 20px 0px;">Updating packages<span style="font-weight: normal;">:&nbsp;<font color="#0a9a40">npm update</font></span></h2>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 339px; left: 88px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<b>Removing Packages: </b>&nbsp; <font color="#0a9a40">npm rm &lt;name&gt;</font>&nbsp;<br>&nbsp;or you can also use<font color="#0a9a40"> npm uninstall &lt;name&gt;</font><br>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-23" data-x="38283.94666666666" data-y="354.9866666666667" data-scale="3" id="step-24" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(38283.94666666666px, 354.9866666666667px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-23" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 31px; left: 157px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Using a Module in Node.js
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 169px; left: 7px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 65px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+var http = require('http');<br>var mod = require('./myModule.js');<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 342px; left: 28px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Only those Functions and variables are accesible&nbsp;<br>that are exposed using the exports api<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 452px; left: 204px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div>var PI = Math.PI;</div><div><br></div><div>&nbsp;exports.area = function (r) {</div><div>&nbsp; return PI * r * r;</div><div>};</div><div><br></div><div>&nbsp;exports.circumference = function (r) {</div><div>&nbsp; return 2 * PI * r;</div><div>};</div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-24" data-x="35184.64" data-y="450.56" data-rotate-z="45.26366581533504" data-scale="3" id="step-25" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(35184.64px, 450.56px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(45.26366581533504deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-24" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 24px; left: 385px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Hello HTTP
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 98px; left: 115px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div><font color="#0a9a40">// Include http module.</font></div><div>var http = require("http");</div><div>&nbsp;</div><div><font color="#0a9a40">// Create the server. Function passed as parameter is called on every request made.</font></div><div><font color="#0a9a40">// request variable holds all request parameters</font></div><div><font color="#0a9a40">// response variable allows you to do anything with response sent to the client.</font></div><div>http.createServer(function (request, response) {</div><div>&nbsp; &nbsp;<font color="#0a9a40">// Attach listener on end event.</font></div><div><font color="#0a9a40">&nbsp; &nbsp;// This event is called when client sent all data and is waiting for response.</font></div><div>&nbsp; &nbsp;request.on("end", function () {</div><div>&nbsp; &nbsp; &nbsp; <font color="#0a9a40">// Write headers to the response.</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; // 200 is HTTP status code (this one means success)</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; // Second parameter holds header fields in object</font></div><div><font color="#0a9a40">&nbsp; &nbsp; &nbsp; // We are sending plain text, so Content-Type should be text/plain</font></div><div>&nbsp; &nbsp; &nbsp; response.writeHead(200, {</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'Content-Type': 'text/plain'</div><div>&nbsp; &nbsp; &nbsp; });</div><div>&nbsp; &nbsp; &nbsp; <font color="#0a9a40">// Send data and end response.</font></div><div>&nbsp; &nbsp; &nbsp; response.end('Hello HTTP!');</div><div>&nbsp; &nbsp;});</div><div><font color="#0a9a40">// Listen on the 8080 port.</font></div><div>}).listen(8080);</div>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step future" data-state="strut-slide-25" data-x="47691.09333333333" data-y="232.10666666666665" data-rotate-y="45.26366581533504" data-scale="3" id="step-26" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(47691.09333333333px, 232.10666666666665px, 0px) rotateX(0deg) rotateY(45.26366581533504deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-25" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 35px; left: 230px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+MVC Paradigm&nbsp;
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 157px; left: 1px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 48px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+MVC is not a design pattern,&nbsp;it is an Architectural<br>pattern that describes a way to structure our <br>application and the responsibilities and<br>&nbsp;interactions for each part in that structure.<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 436px; left: 317px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<img src="./Deck Title_files/gs8Rdkc.png">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-26" data-x="44059.306666666664" data-y="232.10666666666665" data-rotate-x="45.83662361046586" data-scale="3" id="step-27" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(44059.306666666664px, 232.10666666666665px, 0px) rotateX(45.83662361046586deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-26" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 35px; left: 421px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Model
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 153px; left: 182px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 759px; height: 506px;">
+<div class="transformContainer" style="-webkit-transform: scale(1.26, 1.26);
+-moz-transform: scale(1.26, 1.26);
+transform: scale(1.26, 1.26)">
+<img src="./Deck Title_files/jhTLQcq.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-27" data-x="43977.386666666665" data-y="2949.12" data-rotate-x="49.847328176381616" data-scale="3" id="step-28" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(43977.386666666665px, 2949.12px, 0px) rotateX(49.847328176381616deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-27" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 16px; left: 334px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Controller
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 596px; left: 22px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 61px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Controller manages user responses<br>and makes changes that are required.<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 117px; left: 152px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 723px; height: 463.62px;">
+<div class="transformContainer" style="-webkit-transform: scale(0.9, 0.9);
+-moz-transform: scale(0.9, 0.9);
+transform: scale(0.9, 0.9)">
+<img src="./Deck Title_files/IPxL3WQ.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-28" data-x="44236.8" data-y="5748.053333333333" data-rotate-z="45.83662361046586" data-scale="3" id="step-29" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(44236.8px, 5748.053333333333px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(45.83662361046586deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-28" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 10px; left: 405px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Model
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 504px; left: 114px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 64px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Model represents a data and<br>usually stores the methods of <br>data manipulation .&nbsp;
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 118px; left: 164px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 697px; height: 336.69px;">
+<div class="transformContainer" style="-webkit-transform: scale(1.18, 1.18);
+-moz-transform: scale(1.18, 1.18);
+transform: scale(1.18, 1.18)">
+<img src="./Deck Title_files/HUNwdSM.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-29" data-x="48250.88" data-y="5556.906666666667" data-rotate-x="45.83662361046586" data-scale="3" id="step-30" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(48250.88px, 5556.906666666667px, 0px) rotateX(45.83662361046586deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-29" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 21px; left: 434px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+View
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 143px; left: 9px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 60px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+The view displays the model data, and<br>&nbsp;sends user actions (e.g. button clicks)<br>&nbsp;to the controller.<br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 412px; left: 2px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 36px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+View is what's presented to the users and how users interact<br>&nbsp;with the app.<br><br>&nbsp;The view is made with HTML, CSS, JavaScript and often templates.<br>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-30" data-x="59037.013333333336" data-y="3181.2266666666665" data-scale="3" id="step-31" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(59037.013333333336px, 3181.2266666666665px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-30" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 30px; left: -7px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 60px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Lets try an illustrative real life example:
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 540px; left: 20px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 39px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<div><ul><li><span style="line-height: normal;">Your Model is a warehouse manager.</span><br></li><li><span style="line-height: normal;">Your View is a salesman.</span><br></li><li><span style="line-height: normal;">Your Controller is a general manager.</span><br></li><li><span style="line-height: normal;">And the entire MVC-solution is the company they work in.</span><br></li></ul></div>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 132px; left: 201px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 546px; height: 323.82px;">
+<div class="transformContainer" style="-webkit-transform: scale(1.45, 1.45);
+-moz-transform: scale(1.45, 1.45);
+transform: scale(1.45, 1.45)">
+<img src="./Deck Title_files/yVc83z4.jpg">
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-31" data-x="115097.6" data-y="20206.933333333334" data-scale="3" id="step-32" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(115097.6px, 20206.933333333334px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-31" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 27px; left: 235px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Benefits Of MVC&nbsp;
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 213px; left: 73px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 24px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+The most obvious advantage we gain using MVC is&nbsp;<br><b>clear separation of presentation (the interface with the user) and application logic.</b><br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 325px; left: 76px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 22px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Apart from isolating the view from the business logic,<br>&nbsp;the M-V-C separation reduces the complexity when designing large applications.<br>&nbsp;The code is much more structured and therefore easier maintain, test and reuse.<br>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+		
+			<div class="step past" data-state="strut-slide-32" data-x="47773.013333333336" data-y="3099.306666666667" data-rotate-x="0.5729577951308232" data-scale="3" id="step-33" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(47773.013333333336px, 3099.306666666667px, 0px) rotateX(0.5729577951308232deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+			<div class=" slideContainer strut-slide-32" style="width: 1024px; height: 768px;">
+			<div class="reveal themedArea">
+			
+			</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 28px; left: 331px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+Geddy.Js&nbsp;
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 168px; left: 53px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 41px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+A simple, MVC structured web framework for Node
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 242px; left: 8px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 64px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+<i>Install geddy-&nbsp;</i><font color="#0a9a40">npm install -g geddy<br></font><i>Create a new real-time app -<br><font color="#0a9a40">geddy gen app -rt app_name</font><br></i>Create a Resource-&nbsp;<br><font color="#0a9a40">geddy gen scaffold -rt profile</font><br>
+</div>
+</div>
+</div>
+			
+			<div class="componentContainer fwrk-ignore " style="top: 646px; left: 19px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-family: ; font-size: 72px;
+			font-weight: ; font-style: ; color: #; text-align: " class="antialias">
+To run a App just enter : <font color="#0a9a40">geddy</font>
+</div>
+</div>
+</div>
+			
+			</div>
+		
+		</div>
+	
+	<div id="overview" class="step past" data-x="57739.94666666666" data-y="10219.52" data-scale="9" style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(57739.94666666666px, 10219.52px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(9); -webkit-transform-style: preserve-3d;"></div>
+	
+</div></div>
+</div>
+</div>
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div></body></html>
